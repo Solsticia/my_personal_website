@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juncheng Zhu - Personal Hub</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            background-image: url('wood.jpg')
+        }
+
+        .header {
+            position: relative;
+            background: url('background.jpg') no-repeat center center/cover;
+            height: 400px;
+            color: white;
+            text-align: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .header h2 {
+            margin: 10px 0;
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        .main-content {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+        }
+
+        .text-and-skills {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .text-section {
+            flex: 1;
+        }
+
+        .text-section p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        .skills-wrapper {
+            margin-top: 20px;
+        }
+
+        .skills-section {
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills-section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .skills-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-section ul li {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-section img:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+
+        }
+
+        .timeline-wrapper {
+            margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        .card.text-section {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .project-wrapper {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card h4 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .project-card button {
+            align-self: center;
+            /* Centers the button horizontally */
+            padding: 10px 20px;
+            font-size: 14px;
+            color: white;
+            background: #444;
+            /* A more neutral, darker gray color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .project-card button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1>My Personal Hub</h1>
+            <h2>Juncheng Zhu</h2>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="text-and-skills">
+            <div class="card text-section" style="max-height: 200px; overflow-y: auto;">
+                <p>Hi there!</p>
+                <p>
+                    I'm a high school student at Bayview Secondary School in Ontario with a love for math, computer
+                    science,
+                    and creative problem-solving.
+                </p>
+                <p>
+                    I spend my time building projects, enjoying instrumental music, and playing table tennis. One day, I
+                    hope
+                    to channel my passions into a career as a computer engineer.
+                </p>
+            </div>
+
+            <div class="card skills-wrapper">
+                <div class="skills-section">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li><strong>Programming:</strong> Expert in C++, Java, and Python with a focus on algorithms and
+                            data structures through competitive programming.</li>
+                        <li><strong>Web Development:</strong> Proficient in front-end and back-end development, with
+                            projects including web-based games, a movie recommendation system, and a number recognizer.
+                        </li>
+                        <li><strong>Tools & Frameworks:</strong> Skilled with React.js, TensorFlow, Git, and Docker.
+                        </li>
+                    </ul>
+
+                    <h3>Mathematical & Analytical Skills</h3>
+                    <ul>
+                        <li>Strong background in competitive math and mathematical modeling, known for critical
+                            thinking, accuracy, and consistency.</li>
+                    </ul>
+
+                    <h3>Leadership & Collaboration</h3>
+                    <ul>
+                        <li>Experienced in mentoring and supporting new immigrant students, demonstrating empathy and
+                            teamwork.</li>
+                        <li>Strong communicator and collaborator, thriving in team-based competitions and group
+                            projects.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card project-wrapper">
+                <h3 style="
+                    margin: 0 0 10px 0px; 
+                    font-size: 24px; 
+                    font-weight: bold;">
+                    My Projects</h3>
+                <div class="project-grid">
+
+                    <div class="project-card">
+                        <h4
+                            style="display: flex; justify-content: center; align-items: center; text-align: center; height: 100%;">
+                            Movie Recommendation System</h4>
+                        <p>My movie recommendation system is built using data from the IMDb Dataset of Top 1000 Movies
+                            and TV Shows, sourced from Kaggle and provided by Harshit Shankhdhar. This system helps
+                            users find the perfect movie by analyzing release year, CBFC rating, genre, publication
+                            year, and IMDb rating.</p>
+                        <button onclick="window.location.href='https://baidu.com'">Try Here</button>
+                    </div>
+                    <div class="project-card">
+                        <h4
+                            style="display: flex; justify-content: center; align-items: center; text-align: center; height: 100%;">
+                            Number Recognition System</h4>
+                        <p>The Number Recognition System leverages a convolutional neural network (CNN) trained on the
+                            MNIST dataset to accurately identify handwritten digits (0–9). Users can interact with the
+                            system through a simple web interface that allows them to either draw or upload digit images
+                            for predictions.</p>
+                        <button onclick="window.location.href='https://baidu.com'">Try Here</button>
+                    </div>
+                    <div class="project-card">
+                        <h4
+                            style="display: flex; justify-content: center; align-items: center; text-align: center; height: 100%;">
+                            Firework-vs-Angos</h4>
+                        <p>This is an exciting shooting game where players use their mouse to launch fireworks at angos.
+                            As your score increases, so does the difficulty—the number and HP of angos rise.
+                            Fortunately, your weapon evolves too, becoming more powerful and visually impressive. My
+                            personal record is 1205 points—can you beat it?</p>
+                        <button onclick="window.location.href='https://solsticia.github.io/fireworkVsAngo/'">Click Here</button>
+                    </div>
+                    <div class="project-card">
+                        <h4
+                            style="display: flex; justify-content: center; align-items: center; text-align: center; height: 100%;">
+                            Online Study Room</h4>
+                        <p>The Online Study Room creates a calm and focused environment to help you study effectively.
+                            It features a serene background paired with a playlist of 15 carefully selected Japanese
+                            instrumental tracks to set the perfect mood. Additionally, a minimalist white timer is
+                            included to manage productive periods and breaks.</p>
+                        <button onclick="window.location.href='https://solsticia.github.io/onlineStudyRoom/'">Click Here</button>
+                    </div>
+                </div>
+            </div>
+<!---->
+            
+        <!---->
+
+        </div>
+        <div class="image-section">
+            <img src="豪.jpg" alt="Profile Picture">
+            <div class="timeline-wrapper card">
+                <h3 style="
+                    margin: 0 0 10px -200px; 
+                    font-size: 24px; 
+                    font-weight: bold;">
+                    Timeline</h3>
+                <iframe src="testing3copy.html" style="
+                    margin-left: -225px; 
+                    margin-top: -140px; 
+                    width: calc(100% + 200px); 
+                    overflow-x: visible; 
+                    height: 500px; 
+                    border: none;">
+                </iframe>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>

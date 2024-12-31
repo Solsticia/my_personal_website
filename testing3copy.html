@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --rotate-speed: 40;
+            --count: 8;
+            --easing: cubic-bezier(0.000, 0.37, 1.000, 0.63);
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .void {
+            width: 100%;
+            max-width: 1024px;
+            margin: auto;
+            position: relative;
+            aspect-ratio: 1 / 1;
+        }
+
+        ul:hover * {
+            animation-play-state: paused;
+        }
+
+
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            z-index: 1;
+        }
+
+        li {
+            position: absolute;
+            top: 68%;
+            transform: translateY(-50%);
+            width: 103%;
+            animation: rotateCW calc(var(--rotate-speed) * 1s) var(--easing) infinite;
+        }
+
+        .card {
+            width: 180px;
+            height: 45px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 5px 12px;
+            gap: 8px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 12px rgba(70, 0, 255, 0.1), 0px 16px 32px rgba(165, 135, 255, 0.1);
+            border-radius: 12px;
+            font: 400 10px '';
+            color: #535062;
+            animation: rotateCCW calc(var(--rotate-speed) * 1s) var(--easing) infinite;
+
+        }
+
+        .card img {
+            width: 100%;
+            color: unset;
+            display: block;
+            height: auto;
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: unset;
+            display: block;
+            height: 80px;
+            overflow: hidden;
+        }
+
+        .model-name {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 150%;
+            color: #3B2ED0;
+            display: block;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        li:nth-child(2),
+        li:nth-child(2) .card {
+            animation-delay: calc((var(--rotate-speed) / var(--count)) * -1s);
+        }
+
+        li:nth-child(3),
+        li:nth-child(3) .card {
+            animation-delay: calc((var(--rotate-speed) / var(--count)) * -2s);
+        }
+
+        li:nth-child(4),
+        li:nth-child(4) .card {
+            animation-delay: calc((var(--rotate-speed) / var(--count)) * -3s);
+        }
+
+        li:nth-child(5),
+        li:nth-child(5) .card {
+            animation-delay: calc((var(--rotate-speed) / var(--count)) * -4s);
+        }
+
+        li:nth-child(6),
+        li:nth-child(6) .card {
+            animation-delay: calc((var(--rotate-speed) / var(--count)) * -5s);
+        }
+
+        @keyframes rotateCW {
+            from {
+                transform: translate3d(0px, -50%, -1px) rotate(-45deg);
+            }
+
+            to {
+                transform: translate3d(0px, -50%, 0px) rotate(-315deg);
+            }
+        }
+
+        @keyframes rotateCCW {
+            from {
+                transform: rotate(45deg);
+            }
+
+            to {
+                transform: rotate(315deg);
+            }
+        }
+
+        .center-circle {
+            position: absolute;
+            width: 75px;
+            aspect-ratio: 1 / 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+                0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+            border-radius: 50%;
+            opacity: 0.95;
+            background-image: url(木齿轮.png);
+            background-size: 90%;
+            background-position: center;
+            transition: transform 0.3s ease;
+            animation: rotateBackground 30s linear infinite;
+            /* Smooth transition for rotation */
+        }
+
+        .center-circle:hover {
+            animation: rotateBackground 10s linear infinite;
+            /* Rotate animation on hover */
+        }
+
+
+        @keyframes rotateBackground {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+                /* Initial rotation */
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+                /* Full rotation */
+            }
+        }
+
+
+        .second-circle {
+            position: absolute;
+            width: 20%;
+            aspect-ratio: 1 / 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #8F5C38;
+            opacity: 0.85;
+            box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+                0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+            border-radius: 50%;
+        }
+
+        .last-circle {
+            position: absolute;
+            width: 30%;
+            aspect-ratio: 1 / 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #FDD692;
+            opacity: 0.95;
+            box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+                0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+            border-radius: 50%;
+
+        }
+
+        .crop {
+            -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0) 50%,
+                    rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1));
+        }
+
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 50%;
+            background-position: 100% 50%;
+            background-repeat: no-repeat;
+        }
+        .mask:after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 60%;
+            right: 0;
+            top: 130px;
+            display: block;
+            background-image: linear-gradient(180deg, rgba(139, 69, 19, 0) 0%, #8B4513 50%, rgba(139, 69, 19, 0) 100%);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="void" id="void">
+        <div class="crop">
+            <ul class="card-list" style="--count:6;">
+                <li>
+                    <div class="card"><a href="">
+                            <span>2024. </span>
+                            <span>Achieved the Fermat Math Contest Champion and the top 20 of the Euclid Math
+                                Contest.</span>
+                        </a></div>
+                </li>
+
+                <li>
+                    <div class="card"><a href="">
+                            <span>2023. </span>
+                            <span>Reached USACO Gold tier, and got more proficient in competitive programming
+                                skills.</span>
+                        </a></div>
+                </li>
+
+                <li>
+                    <div class="card"><a href="">
+                            <span>2021. </span>
+                            <span>Moved to Canada and attended Bayview S.S. I started my own projects and took
+                                contests.</span>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card"><a href="">
+                            <span>2018-2021. </span>
+                            <span>More obsessed in math and coding in Zhangjiang Group School. </span>
+                        </a></div>
+                </li>
+
+                <li>
+                    <div class="card"><a href="">
+                            <span>2013-2018. </span>
+                            <span>Attended Shanghai Fushan Primary School. Developed a love for math, and
+                                exploration.</span>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="card"><a href="">
+                            <span>Future Goal: </span>
+                            <span>Aim to study computer science, pursue a PhD, and promote ethical AI for positive
+                                impact.</span>
+                </li>
+            </ul>
+            <div class="last-circle"></div>
+            <div class="second-circle"></div>
+
+        </div>
+        <div class="mask"></div>
+        <div class="center-circle"></div>
+
+        <div class="mask-line"></div>
+
+    </div>
+</body>
+
+</html>
